@@ -51,6 +51,7 @@ run(Config, FirstFiles, RestFiles, CompileFn) ->
             F = fun() -> compile_worker(Self, Config, CompileFn) end,
             Jobs = rebar:get_jobs(Config),
             ?DEBUG("Starting ~B compile worker(s)~n", [Jobs]),
+			%% Compile the files in concurrence.
             Pids = [spawn_monitor(F) || _I <- lists:seq(1,Jobs)],
             compile_queue(Config, Pids, RestFiles)
     end.
