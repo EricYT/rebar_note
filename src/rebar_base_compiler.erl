@@ -43,6 +43,7 @@ run(Config, FirstFiles, RestFiles, CompileFn) ->
     compile_each(FirstFiles, Config, CompileFn),
 
     %% Spin up workers for the rest of the files
+	%% 生成消费者来轮转编译文件
     case RestFiles of
         [] ->
             ok;
