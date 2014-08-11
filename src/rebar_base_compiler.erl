@@ -50,6 +50,7 @@ run(Config, FirstFiles, RestFiles, CompileFn) ->
         _ ->
             Self = self(),
             F = fun() -> compile_worker(Self, Config, CompileFn) end,
+			%% The count of workers.
             Jobs = rebar:get_jobs(Config),
             ?DEBUG("Starting ~B compile worker(s)~n", [Jobs]),
 			%% Compile the files in concurrence.
