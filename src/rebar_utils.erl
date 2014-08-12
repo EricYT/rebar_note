@@ -135,7 +135,7 @@ sh(Command0, Options0) ->
     DefaultOptions = [use_stdout, abort_on_error],
     Options = [expand_sh_flag(V)
                || V <- proplists:compact(Options0 ++ DefaultOptions)],
-
+	
     ErrorHandler = proplists:get_value(error_handler, Options),
     OutputHandler = proplists:get_value(output_handler, Options),
 
