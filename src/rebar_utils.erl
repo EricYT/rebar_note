@@ -156,6 +156,7 @@ find_files(Dir, Regex) ->
     find_files(Dir, Regex, true).
 
 find_files(Dir, Regex, Recursive) ->
+	%% 遍历指定目录
     filelib:fold_files(Dir, Regex, Recursive,
                        fun(F, Acc) -> [F | Acc] end, []).
 
