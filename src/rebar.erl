@@ -54,6 +54,8 @@
 %% ====================================================================
 
 %% escript Entry point
+%% when you run the script bootstrap to generate the rebar, call the function main/1
+%% with the arguments ["compile", "escriptize"] ++ args
 main(Args) ->
     case catch(run(Args)) of
         ok ->

@@ -4,4 +4,4 @@ external_includes=
 external_modules=
 include_dirs=include;inttest/erlc/extra-include;inttest/erlc/include;inttest/tdeps1;inttest/tdeps2;inttest/tdeps3;inttest/tdeps_update;
 output_dir=ebin
-source_dirs=inttest;inttest/code_path_no_recurse;inttest/code_path_no_recurse/deps/bazdep/src;inttest/code_path_no_recurse/deps/bazdep/test;inttest/code_path_no_recurse/deps/foodep/src;inttest/code_path_no_recurse/deps/foodep/test;inttest/code_path_no_recurse/deps/unuseddep/src;inttest/code_path_no_recurse/src;inttest/code_path_no_recurse/test;inttest/ct1;inttest/ct2;inttest/depplugins;inttest/erlc;inttest/erlc/extra-src;inttest/erlc/src;inttest/erlc/src/behaviour;inttest/eunit;inttest/eunit/eunit_src;inttest/eunit/src;inttest/logging;inttest/rgen1;inttest/tdeps1;inttest/tdeps2;inttest/tdeps3;inttest/tdeps_update;inttest/thooks;inttest/tplugins;inttest/t_custom_config;priv/templates;src;test;test/upgrade_project/apps/dummy/src;
+source_dirs=src;test;test/upgrade_project/apps/dummy/src;
