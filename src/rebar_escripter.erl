@@ -66,6 +66,15 @@ escriptize(Config0, AppFile) ->
     ExtraFiles = usort(InclBeams ++ InclExtra),
     Files = EbinFiles ++ ExtraFiles,
 
+	%% All files zip into a binary
+	%% As you know,the rebar script is self-contain file.You can copy it to anywhere you want
+	%% to use it.
+	%% TODO: notice the path
+	%% The Files formate like this:
+	%% [{"rebar/ebin/module.beam", Binary}, ...]
+	%% The path of the file is not absolute path or relative path,is the name of the script
+	%% we generate by bootstrap 'rebar'.That is to say, The rebar be treated as a beam container
+	%% 
     case zip:create("mem", Files, [memory]) of
         {ok, {"mem", ZipBin}} ->
             %% Archive was successfully created. Prefix that binary with our

@@ -97,6 +97,7 @@ run(["version"]) ->
     %% Display vsn and build time info
     version();
 run(RawArgs) ->
+	%% Pre load rebarapp configuration
     ok = load_rebar_app(),
     %% Parse out command line arguments -- what's left is a list of commands to
     %% run -- and start running commands
@@ -119,6 +120,8 @@ run(RawArgs) ->
 
 load_rebar_app() ->
     %% Pre-load the rebar app so that we get default configuration
+	%% That is to say,when you call application:start/1, you need not to load
+	%% the default configuration anymore.
     ok = application:load(rebar).
 
 init_config({Options, _NonOptArgs}) ->
